@@ -14,3 +14,7 @@ body table td {
 	height: 5px;
 	border: 1px solid black;
 }
+
+img{
+    position:absolute;
+}

@@ -81,4 +81,54 @@ el botón).
 10.Mejora el ejercicio anterior para que se pueda hacer en una página con un número
 cualquiera de imágenes.*/
 
+var activado;
+var offsetX;
+var offsetY;
+function creaImg(){
+    var imagen = document.createElement('img');
+    imagen.src = "pollo.jpg";
+    imagen.id = 'imagen';
+    document.body.appendChild(imagen);
+    imagen.addEventListener('mousedown',activa);
+    imagen.addEventListener('mouseup',desactiva);
+    document.addEventListener('mousemove', obtieneCoords);
+}
 
+function activa(event){
+    offsetX = event.offsetX;
+    offsetY = event.offsetY;
+    activado = true;
+}
+
+function desactiva(event){
+    activado = false;
+}
+/*
+function estado(event){
+    offsetX = event.offsetX;
+    offsetY = event.offsetY;
+    if(activado){
+        activado = false;
+    }else{
+        activado = true;
+    }
+}
+*/
+
+function obtieneCoords(event){
+    event.preventDefault();
+    var x = event.clientX - offsetX;
+    var y = event.clientY - offsetY;
+    if (activado) arrastra(x,y);
+}
+
+function arrastra(x, y){
+    var img = document.getElementById('imagen');
+    img.style.left = (x+'px');
+    img.style.top = (y+'px');
+}
+
+
+window.onload = function(){
+    creaImg();
+}
