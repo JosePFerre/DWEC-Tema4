@@ -1,0 +1,16 @@
+body {
+	margin: 0;
+	height: 100%;
+}
+
+body table{
+    display: flex;
+    justify-content:center;
+    bottom:30%;
+}
+
+body table td {
+	width: 5px;
+	height: 5px;
+	border: 1px solid black;
+}
