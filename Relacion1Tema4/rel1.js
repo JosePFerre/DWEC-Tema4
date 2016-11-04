@@ -1,3 +1,7 @@
+//Jose Pablo Ferre Leorini 2ºDAW DWEC
+//Tema 4. Relacion 1.
+
+
 /*
 1-Captura el evento onClick del ratón para que cada vez que suceda se ejecute un alert.*/
 /*
@@ -78,15 +82,14 @@ window.onload = function(){
 /*9. Crea una página web que haciendo uso de eventos permita arrastrar una imagen
 haciendo uso del ratón (al pulsar sobre la imagen la voy arrastrando hasta que suelto
 el botón).
-10.Mejora el ejercicio anterior para que se pueda hacer en una página con un número
-cualquiera de imágenes.*/
-
+*/
+/*
 var activado;
 var offsetX;
 var offsetY;
 function creaImg(){
     var imagen = document.createElement('img');
-    imagen.src = "pollo.jpg";
+    imagen.src = 'pollo.jpg';
     imagen.id = 'imagen';
     document.body.appendChild(imagen);
     imagen.addEventListener('mousedown',activa);
@@ -103,17 +106,6 @@ function activa(event){
 function desactiva(event){
     activado = false;
 }
-/*
-function estado(event){
-    offsetX = event.offsetX;
-    offsetY = event.offsetY;
-    if(activado){
-        activado = false;
-    }else{
-        activado = true;
-    }
-}
-*/
 
 function obtieneCoords(event){
     event.preventDefault();
@@ -132,3 +124,50 @@ function arrastra(x, y){
 window.onload = function(){
     creaImg();
 }
+*/
+/*
+10.Mejora el ejercicio anterior para que se pueda hacer en una página con un número
+cualquiera de imágenes.*/
+
+/*
+var id;
+var activado;
+var offsetX;
+var offsetY;
+function seleccionaImg(){
+    for (img of document.images){
+        img.addEventListener('mousedown',activa);
+        img.addEventListener('mouseup',desactiva);
+    }
+    document.addEventListener('mousemove', obtieneCoords);
+}
+
+function activa(event){
+    id = event.target.id;
+    offsetX = event.offsetX;
+    offsetY = event.offsetY;
+    activado = true;
+}
+
+function desactiva(event){
+    activado = false;
+}
+
+function obtieneCoords(event){
+    event.preventDefault();
+    var x = event.clientX - offsetX;
+    var y = event.clientY - offsetY;
+    if (activado) arrastra(x,y);
+}
+
+function arrastra(x, y){
+    var img = document.getElementById(id);
+    img.style.left = (x+'px');
+    img.style.top = (y+'px');
+}
+
+
+window.onload = function(){
+    seleccionaImg();
+}
+*/
