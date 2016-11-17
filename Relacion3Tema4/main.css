@@ -1,0 +1,53 @@
+/*RELACION 3 TEMA 4 DAW DWEC
+Jose Pablo Ferre Leorini*/
+
+html, body{
+    font-family: sans-serif;
+    width:100%
+}
+
+label{
+    width:100px;
+    display:inline-block;
+    line-height: 30px;
+    text-align: right;
+}
+
+input, select {
+    display:inline-block;
+}
+
+textarea {
+    position: relative;
+    vertical-align: top; 
+}
+
+input[name=name] {    
+    width: 300px;
+}
+
+input[name=address] {    
+    width: 300px;
+}
+
+input[name=email] {    
+    width: 300px;
+}
+
+button{
+    font-size: 20px;
+    margin-top: 2%;
+    position:absolute;
+    align-self: center;
+    left:20%;
+}
+
+div#alerta{
+    color:red;
+}
+
+div#enviado{
+    width:25%;
+    background-color: greenyellow;
+    font-size: 20px;
+}
